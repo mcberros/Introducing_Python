@@ -1,0 +1,1605 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Introducing Python</title>
+
+  <meta name="description"
+        content="Introducing Python for agile girls">
+  <meta name="author" content="@mcberros">
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"/>
+
+  <link rel="stylesheet" href="reveal.js-2.1/css/reveal.css">
+  <link rel="stylesheet" href="reveal.js-2.1/css/theme/default.css" id="theme">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="reveal.js-2.1/lib/css/zenburn.css">
+
+  <style>
+    /* Aside */
+    .left {
+      float: left;
+    }
+
+    img.left {
+      margin: 0;
+      padding: 0;
+      width: 25%;
+    }
+
+    img.left + ul {
+      margin: 0;
+      width: 60%;
+    }
+
+    /* Figures with captions */
+    .reveal section figure {
+      position: relative;
+      margin: 0 auto;
+      padding:0;
+      width: 600px;
+      height: 400px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .reveal section figure > img {
+      width: 100%;
+      max-height: none;
+      border-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .reveal section figure > figcaption {
+      position: absolute;
+      bottom: 0.5em;
+      left: 0;
+      width: 100%;
+      border-style: none;
+      border-width: 0;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(37, 33, 28);
+      background-color: rgba(37, 33, 28, 0.5);
+      font-size: 0.4em;
+      text-align: center;
+    }
+
+    .reveal section figure > figcaption {
+      line-height: 1.5em;
+      vertical-align: middle;
+    }
+
+    .reveal section figure > figcaption a {
+      line-height: 1.5em !important;
+    }
+
+    /* Cover */
+    .reveal section.cover footer {
+      line-height: 33px;
+      clear: both;
+    }
+
+    .reveal section.cover > footer {
+      position: absolute;
+      bottom: 0.5em;
+      left: 0;
+      border-style: none;
+      border-width: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: rgb(37, 33, 28);
+      background-color: rgba(37, 33, 28, 0.5);
+      font-size: 0.4em;
+      text-align: center;
+    }
+
+    .reveal section.cover footer img {
+      float: left;
+      margin: 0 1em 0 0;
+      padding: 0;
+      cursor: pointer;
+      border-style: none;
+    }
+
+    .reveal section.cover footer a,
+    .reveal section.cover footer span {
+      margin: 0;
+      padding: 0;
+      vertical-align: baseline;
+      line-height: 33px;
+    }
+
+    /* Separata */
+    .reveal section.separata hgroup {
+      margin-top: 0.5em;
+    }
+
+    .reveal section.separata hgroup h2,
+    .reveal section.separata hgroup h3,
+    .reveal section.separata hgroup h4 {
+      color: #F0F1EB;
+      text-shadow: #111150 0px 0px 0.2em;
+    }
+
+    .reveal section.separata figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .reveal section.separata figure > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-style: none;
+      border-width: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    /* Animation */
+    div.animation-container {
+      position: relative;
+      margin: 0 auto;
+      padding: 0;
+      width: 809px;
+      height: 399px;
+      background-color: transparent;
+      -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px 0px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px 0px;
+      overflow: hidden;
+    }
+
+    .animation-container .frame,
+    .animation-container .frame > img {
+      position: absolute;
+      top:0;
+      left: 0;
+      border: 0;
+      border-style: none;
+      padding: 0;
+      margin: 0;
+      min-width: 100%;
+      max-width: none;
+      max-height: none;
+      box-shadow: none
+    }
+
+    .animation-container .frame > img.loader {
+      position: absolute;
+      top:140px;
+      left: 180px;
+      border: 0;
+      border-style: none;
+      padding: 0;
+      margin: 0;
+      width: 126px;
+      min-width: 126px;
+      box-shadow: none;
+    }
+  </style>
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write('<link rel="stylesheet" href="reveal.js-2.1/css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+  </script>
+
+  <!--[if lt IE 9]>
+  <script src="reveal.js-2.1/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+
+    <section class="cover">
+      <h1>Python Introduction</h1>
+
+      <h2>(for Agile Girls)</h2>
+
+      <p>
+        <small>By Carmen Berros /
+          <a href="http://twitter.com/mcberros">@mcberros</a></small>
+      </p>
+      <footer>
+        <a rel="license"
+           href="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+          <img alt="Creative Commons License"
+               src="http://i.creativecommons.org/l/by-nc-sa/2.0/88x31.png"/>
+        </a>
+        <span>This work is licensed under a </span>
+        <a rel="license"
+           href="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+          Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic
+          License
+        </a>
+
+      </footer>
+    </section>
+
+    <!-- Presentación -->
+    <section>
+      <h2>Carmen Berros</h2>
+      <h4>(Who's that girl?)</h4>
+
+      <img src="img/Carmen_Berros.jpg" class="left"
+           alt="[Carmen Berros, circa 2011]">
+      <ul>
+        <li>Working as a professional since 2000</li>
+        <li>Worked with Apache Web Server and JAVA Web Applications at big companies</li>
+        <li>Fell in love with Devops</li>
+        <li>Python used for automatization</li>
+        <li>Follow me at
+          <a href="https://twitter.com/mcberros">@mcberros</a></li>
+      </ul>
+    </section>
+
+    <!-- Indice -->
+
+    <section>
+      <h2>This talk</h2>
+      <ol>
+        <li>Basic Syntax</li>
+        <li>Built-in Types and Operators</li>
+        <li>Assignment</li>
+        <li>Control Flow</li>
+        <li>Functions</li>
+        <li>Modules and classes</li>
+        <li>Tools</li>
+        <li>Resources</li>
+      </ol>
+    </section>
+
+
+    <!-- Para separar las secciones -->
+
+    <section class="separata">
+      <hgroup>
+        <h2>Basic Syntax</h2>
+      </hgroup>
+      <figure>
+        <img src="./img/characters.jpg">
+        <figcaption>
+          <span>Original by Dave Bleasdale:</span>
+          <a href="http://www.flickr.com/photos/sidelong/262897456/"
+         target="_blank">http://bit.ly/119ujqW</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Comments</h2>
+      <h4>Each line of a block comment starts with a # and a single space</h4>
+
+      <pre><code contenteditable>
+        # First comment example
+        var = 1   # second comment
+                  # ... and now a third
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Indentation</h2>
+      <h4>Very important</h4>
+      <ul>
+        <li>4 spaces per indentation level</li>
+        <li>Old code: 8-space</li>
+        <li>Never mix tabs and spaces!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Indentation</h2>
+      <h4>Good code</h4>
+      
+      <pre><code contenteditable>
+        def get_var_l(l):
+          # Compute var r
+          if len(l) <= 1:
+            return [l]
+      </code></pre>
+
+      <h4>Noooooooo</h4>
+      <pre><code contenteditable>
+        def perm(l):
+      # Compute var r
+      if len(l) <= 1:
+          return [l]
+      </code></pre>
+    </section>
+
+    <section class="separata">
+      <hgroup>
+        <h2>Built-in Types and Operators</h2>
+      </hgroup>
+      <figure>
+        <img src="./img/asterisk.jpg">
+        <figcaption>
+          <span>Original by Joseph Robertson: </span>
+          <a href="http://www.flickr.com/photos/josephrobertson/21681817/"
+         target="_blank">http://bit.ly/ZMZxxN</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Boolean</h2>
+        <ul>Values considered as False
+          <li>None</li>
+          <li>False</li>
+          <li>Zero of numeric types: 0, 0L, 0.0, 0j</li>
+          <li>Empty sequence: '', (), []</li>
+          <li>Empty mapping: {}</li>
+          <li>Methods of classes that return false</li>
+        </oul>
+      <br>
+      <p>All other values are considered as True</p>
+    </section>
+
+    <section>
+      <h2>Boolean Operators</h2>
+      <table>
+        <tr>
+          <th>Operation</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <th>x and y</th>
+          <td>if x is false, then x, else y</td>
+        </tr>
+        <tr>
+          <th>x or y</th>
+          <td>if x is false, then y, else x</td>
+        </tr>
+        <tr>  
+          <th>not x</th>
+          <td>if x is false, then True, else False</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Numeric</h2>
+      <ul>
+        <li>Integers: 4</li>
+        <li>Long integers: 4L</li>
+        <li>Floating point: 4.4</li> 
+        <li>Complex numbers: 4j</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Numeric Operators (I)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>x+y</td>
+            <td>sum of <em>x</em> and <em>y</em></td>
+          </tr>
+          <tr>
+            <td>x-y</span></tt></td>
+            <td>difference of <em>x</em> and <em>y</em></td>
+          </tr>
+          <tr>
+            <td>x*y</td>
+            <td>product of <em>x</em> and <em>y</em></td>
+          </tr>
+          <tr>
+            <td>x/y</td>
+            <td>quotient of <em>x</em> and <em>y</em></td>
+          </tr>
+          <tr>
+            <td>x//y</td>
+            <td>(floored) quotient of <em>x</em> and
+            <em>y</em></td>
+          </tr>
+          <tr>
+            <td>x%y</td>
+            <td>remainder of x / y</td>
+          </tr>
+          <tr>
+            <td>-x</td>
+            <td><em>x</em> negated</td>
+          </tr>
+          <tr>
+            <td>+x</td>
+            <td><em>x</em> unchanged</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Numeric Operators (II)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>abs(x)</td>
+            <td>absolute value or magnitude of
+            <em>x</em></td>
+          </tr>
+          <tr>
+            <td>int(x)</td>
+            <td><em>x</em> converted to integer</td>
+          </tr>
+          <tr>
+            <td>long(x)</td>
+            <td><em>x</em> converted to long integer</td>
+          </tr>
+          <tr>
+            <td>float(x)</td>
+            <td><em>x</em> converted to floating point</td>
+          </tr>
+          <tr>
+            <td>divmod(x,y)</td>
+            <td>the pair (x//y,x%y)</td>
+          </tr>
+          <tr>
+            <td>x**y</td>
+            <td><em>x</em> to the power <em>y</em></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Sequence Types</h2>
+      <h4>String</h4>
+      <p>There isn't a character type; these are treated as strings of length one</p>
+      <pre><code contenteditable>
+  word = 'word'
+  sentence = "This is a sentence."
+  paragraph = """This is a paragraph. It is
+                    made up of multiple lines and sentences."""
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Sequence Types</h2>
+      <h4>Print statement</h4>
+      <p>This function converts the expressions you pass it to a string and writes the result to standard output</p>
+      <pre><code contenteditable>
+        >>> print 'Hello World!'
+        Hello World!
+        >>> print 10
+        10
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Sequence Types</h2>
+      <h4>String Format Operator</h4>
+      <pre><code contenteditable>
+  >>> name ='Zara'
+  >>> weight=55
+  >>> sentence='My name is %s and my weight is %d' % (name,weight)
+  >>> print sentence
+  My name is Zara and my weight is 12 
+      </code></pre>
+    </section>
+      
+    <section>
+      <h2>Sequence Types</h2>
+      <h4>List</h4>
+      <p>Lists are mutable: support additional operation<p>s that allow in-place modification of the object</p>
+      <pre><code contenteditable>
+        list1 = [1990, 1992, 1997, 2000]
+        list2 = [1, 2, 3, 4, 5 ]
+        list3 = ["a", "b", "c", "d"]
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Sequence Types</h2>
+      <h4>Tuple</h4>
+      <pre><code contenteditable>
+        tup1 = (1990, 1992, 1997, 2000)
+        tup2 = (1, 2, 3, 4, 5 )
+        tup3 = ("a", "b", "c", "d")
+      </code></pre>
+      <ul> Tuples vs Lists
+        <li>Tuples are faster than lists</li>
+        <li>Code safer if you “write-protect” data that does not need to be changed</li>
+        <li>Tuples can be used as dictionary keys</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Sequence Types</h2>
+      <h4>Unicode</h4>
+      <pre><code contenteditable>
+        print u'Hello, world!'
+      </code></pre>
+    </section>
+     
+    <section>
+      <h2>Sequence Type Operators (I)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>x in s</td>
+            <td>True if an item of <em>s</em> is
+              equal to <em>x</em>, else False
+            </td>
+          </tr>
+          <tr>
+            <td>x not in s</td>
+            <td>False if an item of <em>s</em> is equal to <em>x</em>, else True </td>
+          </tr>
+          <tr>
+            <td>s + t</td>
+            <td>the concatenation of <em>s</em> and <em>t</em></td>
+          </tr>
+          <tr>
+            <td>s * n, n * s</td>
+            <td><em>n</em> copies of <em>s</em> concatenated</td>
+          </tr>
+          <tr>
+            <td>len(s)</td>
+            <td>length of <em>s</em></td>
+          </tr>
+          <tr>
+            <td>s.index(i)</td>
+            <td>index of the first occurence of <em>i</em> in <em>s</em></td>
+          </tr>
+          <tr>
+            <td>s.count(i)</td>
+            <td>total number of occurences of <em>i</em> in <em>s</em></td>
+          </tr>
+          <tr>
+            <td>s[i]</td>
+            <td><em>i</em>th item of <em>s</em>, origin 0. If i > len(s) then raises IndexError</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Sequence Type Operators (II)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Result</th>  
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>s[i:j]</td>
+            <td>slice of <em>s</em> from <em>i</em> to <em>j</em>. If j > len(s) then return until the end of the string</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+            <pre><code contenteditable>
+            >>> var2 = "Python Programming"
+            >>> print "var2[1:5]: ", var2[1:5]
+            var2[1:5]:  ytho
+            </code></pre>
+            </td
+          </tr>
+          <tr>
+            <td>s[i:j:k]</td>
+            <td>slice of <em>s</em> from <em>i</em> to <em>j</em> with step <em>k</em></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <pre><code contenteditable>
+                >>> var2 = "Python Programming"
+                >>> print "var2[1:5:2]: ", var2[1:5:2]
+                var2[1:5:2]:  yh
+              </code></pre>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Mutable Sequence Type Operators (I)</h2>
+      <h4>Lists and Bytearrays</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr>
+              <td>s[i]=x</td>
+              <td>item <em>i</em> of <em>s</em> is replaced by <em>x</em></td>
+            </tr>
+            <tr>
+              <td>s[i:j] = t</td>
+              <td>slice of <em>s</em> from <em>i</em> to <em>j</em> is replaced by the contents of the iterable <em>t</em></td>
+            </tr>
+            <tr>
+              <td>del s[i:j]</td>
+              <td>same as s[i:j] = []</td>
+            </tr>
+            <tr>
+              <td>s.append(x)</td>
+              <td>same as s[len(s):len(s)] =
+              [x]</td>
+            </tr>
+            <tr>
+              <td>s.extend(x)</td>
+              <td>same as s[len(s):len(s)] = x</td>
+            </tr>
+            <tr>
+              <td>s.count(x)</td>
+              <td>return number of <em>i</em>‘s for which s[i] == x</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Mutable Sequence Type Operators (II)</h2>
+      <h4>Lists and Bytearrays</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr>
+              <td>s.insert(i, x)</td>
+              <td>same as s[i:i] = [x]</td>
+            </tr>
+            <tr>
+              <td>s.pop([i])</td>
+              <td>same as x = s[i]; del s[i]; return x</td> 
+            </tr>
+          <tr>
+            <td>s.remove(x)</td>
+            <td>same as del s[s.index(x)]</td>
+          </tr>
+          <tr>
+            <td>s.reverse()</td>
+            <td>reverses the items of <em>s</em> in place</td>
+          </tr>
+          <tr>
+            <td>s.sort([cmp[, key[, reverse]]])</td>
+            <td>sort the items of <em>s</em> in place</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Mapping type: Dict</h2>
+      <ul>
+        <li>Pairs (items) of keys and values</li>
+        <pre><code contenteditable>
+        dict = {'Mercy': 12, 'Joe': 17, 'Henry': 45}
+        </code></pre>
+
+        <li>More than one entry per key not allowed.</li>
+        <pre><code contenteditable>
+        dict = {'Name': 'Zara', 'Age': 7, 'Name': 'Manni'}
+        # Wins 'Manni'
+        </code></pre>
+
+        <li>Keys always immutable. You can use strings, numbers or tuples</li>
+        <pre><code contenteditable>
+        # Nooooooo
+        dict = {['Name']: 'Zara', 'Age': 7};
+        </code></pre>
+    </section>
+
+    <section>
+      <h2>Dict Operators (I)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr>
+              <td>len(d)</td>
+              <td>Return the number of items in the dictionary d</td>
+            </tr>
+            <tr>
+              <td>d[key]</td>
+              <td>Return the item of d with key key. Raises a KeyError if key is not in the map</td> 
+            </tr>
+          <tr>
+            <td>d[key] = value</td>
+            <td>Set d[key] to value</td>
+          </tr>
+          <tr>
+            <td>del d[key]</td>
+            <td>Remove d[key] from d. Raises a KeyError if key is not in the map</td>
+          </tr>
+          <tr>
+            <td>key in d</td>
+            <td>Return True if d has a key key, else False.</td>
+          </tr>
+          <tr>
+            <td>key not in d</td>
+            <td>Equivalent to not key in d</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Dict Operators (II)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+          <tbody>
+          <tr>
+            <td>popitem()</td>
+            <td>Remove and return an arbitrary (key, value) pair from the dictionary.</td>
+          </tr>
+          <tr>
+            <td>clear()</td>
+            <td>Remove all items from the dictionary</td>
+          </tr>
+          <tr>
+            <td>copy()</td>
+            <td>Return a shallow copy of the dictionary</td>
+          </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Dict Operators (III)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+          <tbody>
+          <tr>
+            <td>items(), iteritems()</td>
+            <td>items() return a copy of the dictionary’s list of (key, value) pairs. iteritems() return an iterator over the dictionary’s (key, value) pairs</td>
+            <tr>
+            <td>keys(), iterkeys(), iter(d)</td>
+            <td>keys() return a copy of the dictionary’s list of keys. iterkeys() and iter(d), return an iterator over the dictionary’s keys.</td>
+          </tr>
+          <tr>
+            <td>values(), itervalues()</td>
+            <td>values() return a copy of the dictionary’s list of values. itervalues() return an iterator over the dictionary’s values.</td>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>More types</h2>
+      <ul>
+        <li>Sequence Types</li>
+          <ul>
+            <li>Bytearray</li>
+            <li>Buffer</li>
+            <li>Xrange</li>
+          </ul>
+        <br>
+        <li>Set Types</li>
+          <ul>
+            <li>Set</li>
+            <li>Frozenset</li>
+          </ul>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Comparation Operators</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody valign="top">
+          <tr>
+            <td>&lt;</td>
+            <td>strictly less than</td>
+          </tr>
+          <tr>
+            <td>&lt;=</td>
+            <td>less than or equal</td>
+          </tr>
+          <tr>
+            <td>&gt;</td>
+            <td>strictly greater than</td>
+          </tr>
+          <tr>
+            <td>&gt;=</td>
+            <td>greater than or equal</td>
+          </tr>
+          <tr>
+            <td>==</td>
+            <td>equal</td>
+          </tr>
+          <tr>
+            <td>!=</td>
+            <td>not equal</td>
+          </tr>
+          <tr>
+            <td>is</td>
+            <td>object identity</td>
+          </tr>
+          <tr>
+            <td>is not</td>
+            <td>negated object identity</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Precedence in operators (I)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>or</td>
+            <td>Boolean OR</td>
+          </tr>
+          <tr>
+            <td>and</td>
+            <td>Boolean AND</td>
+          </tr>
+            <td>not x</td>
+            <td>Boolean NOT</td>
+          </tr>
+          <tr>
+            <td>in, not in, is, is not, &lt;, &lt;=, &gt;, &gt;=, &lt;&gt;, !=, ==
+            </td>
+            <td>Comparisons, membership tests , identity tests
+            </td>
+          </tr>
+          <tr>
+            <td>+, -</td>
+            <td>Addition, subtraction</td>
+          </tr>
+          <tr>
+            <td>*, /, //, %</td>
+            <td>Multiplication, division, remainder</td>
+          </tr>
+          <tr>
+            <td>+x, -x</td>
+            <td>Positive, negative</td>
+          </tr>
+          <tr>
+            <td>**</td>
+            <td>Exponentiation</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Precedence in operators (II)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>x[index], x[index:index], x(arguments...), x.attribute</td>
+            <td>Subscription, slicing, call, attribute reference</td> 
+          </tr>
+          <tr>
+            <td>(expressions...), [expressions...], {key:value...}, `expressions...`</td>
+            <td>Binding or tuple display, list display, dictionary display, string conversion</td> 
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="separata">
+      <hgroup>
+        <h2>Assignment</h2>
+      </hgroup>
+      <figure>
+        <img src="./img/gift.jpg">
+        <figcaption>
+          <span>Original by asenat29: </span>
+          <a href="http://www.flickr.com/photos/72153088@N08/6510934443/"
+         target="_blank">http://bit.ly/PEy6YJ</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Assignment</h2>
+      <p>The equal sign ('=') is used to assign a value to a variable</p>
+      <pre><code contenteditable>
+        width = 20
+        height = 5*9
+      </code></pre>
+      <p>A value can be assigned to several variables simultaneously</p>
+      <pre><code contenteditable>
+        x = y = z = 0  # Zero x, y and z
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Destructuring assignment / tuple unpack in Python</h2>
+      <pre><code contenteditable>
+        »> x,y = 1,2
+        »> x,y
+        (1, 2)
+        # equal as
+        »> x, y = [1,2]
+        »> x, y = (1,2)
+      </code></pre>
+      <p>Python 3 deprecates this feature and offers taking rest of tuple into last variable</p>
+      <pre><code contenteditable>
+        »> x,y,*z = 1,2,3,4,5
+        »> x,y,z
+        (1, 2, [3, 4, 5])
+      </code></pre>
+    </section>
+
+    <section class="separata">
+      <hgroup>
+        <h2>Control Flow</h2>
+      </hgroup>
+      <figure>
+        <img src="./img/crossing.jpg">
+        <figcaption>
+          <span>Original by ¡Carlitos: </span>
+          <a href="http://www.flickr.com/photos/carlitos/6656678419/"
+         target="_blank">http://bit.ly/114Tfwe</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>if</h2>
+      <ul>
+        <li>
+          If logical_expression is true, then execute statements. 
+        </li>
+        <li>
+          <pre><code contenteditable>
+          #!/usr/bin/python
+          var1 = 100
+          if var1:
+            print "var1 is true"
+          </code></pre>
+        </li>
+        <li>
+          If logical_expresion is false, then execute code after the end of the if statement.
+        </li>
+        <li>
+          <pre><code contenteditable>
+            #!/usr/bin/python
+            var2 = 0
+            if not var2:
+              print "var2 is false"
+            print "Out if"
+          </code></pre>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>if...elif...else (I)</h2>
+      <ul>elif
+        <li>To check multiple expressions for truth value</li>
+        <li>Execute a block of code as soon as one of the conditions evaluates to true.
+        </li>
+        <li>Optional and there can be an arbitrary number
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>if...elif...else (II)</h2>
+      <ul>else
+        <li>Block of code that executes if the conditional expression in the if statement resolves false value </li>
+        <li>Optional</li>
+        <li>At most only one</li>
+      </ul>
+      <pre><code contenteditable>
+          var = 100
+          if var > 100:
+            print "var > 100"
+          elif var < 100:
+            print "var < 100"
+          else:
+            print "var == 100"
+        </code></pre>
+    </section>
+
+    <section>
+      <h2>while</h2>
+      <ul>
+        <li>Repeatedly executes a target statement as long as a given condition is true</li>
+        <li>The else statement is executed when the condition becomes false (optional)</li>
+      </ul>
+      <pre><code contenteditable>
+        #!/usr/bin/python
+        count = 0
+        while count < 5:
+          print count, " is  less than 5"
+          count = count + 1
+        else:
+          print count, " is greater than 5"
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>for</h2>
+      <ul>
+        <li>Syntax
+        <pre><code contenteditable>
+          for iterating_var in sequence:
+            statements(s)
+         </code></pre>
+        </li>
+        <li>Sequence contains a list</li>
+        <li>Each item is assigned to iterating_var, and the statements block is executed until the sequence is exhausted</li>
+        <li>else</li>
+      </ul>
+      <pre><code contenteditable>
+        #!/usr/bin/python
+        fruits = ['banana', 'apple', 'mango']
+        for fruit in fruits:
+          print 'Current fruit :', fruit
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>List comprehension</h2>
+      <p>A more concise way to create lists</p>
+      <pre><code contenteditable>
+    >>> print [i for i in range(10)]
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+       </code></pre>
+      <pre><code contenteditable>
+    >>> print [i for i in range(20) if i%2 == 0]
+    [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+       </code></pre>
+      <pre><code contenteditable>
+    >>> nums = [1,2,3,4]
+    >>> fruit = ["Apples", "Peaches", "Pears", "Bananas"]
+    >>> print [(i,f) for i in nums for f in fruit]
+    [(1, 'Apples'), (1, 'Peaches'), (1, 'Pears'), (1, 'Bananas'),
+     (2, 'Apples'), (2, 'Peaches'), (2, 'Pears'), (2, 'Bananas'),
+     (3, 'Apples'), (3, 'Peaches'), (3, 'Pears'), (3, 'Bananas'),
+     (4, 'Apples'), (4, 'Peaches'), (4, 'Pears'), (4, 'Bananas')]
+      </code></pre>
+    </section>
+
+    <section class="separata">
+      <hgroup>
+        <h2>Functions</h2>
+      </hgroup>
+      <figure>
+        <img src="./img/mailbox.jpg">
+        <figcaption>
+          <span>Original by Thomas Kamann: </span>
+          <a href="http://www.flickr.com/photos/ktommy/128804265/"
+         target="_blank">http://bit.ly/YLI1fI</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Function</h2>
+      <ul>
+        <li>Block of organized, reusable code</li> 
+        <li>Used to perform a single action</li>
+        <li>Provide better modularity</li>
+      </ul>
+      <pre><code contenteditable>
+        def add(a, b):    # add 2 numbers
+          """Add to numbers."""
+          c = a + b
+          return c
+        
+        # Now call the function we just defined:
+        add(1, 2)
+        3
+      </code></pre>  
+    </section>
+
+    <section>
+      <h2>Arguments (I)</h2>
+      <h4>Required arguments</h4>
+      <ul>
+        <li>Arguments passed to a function in correct positional order</li>
+        <li>The number of arguments in the function call should match exactly with the function definition</li>
+      </ul>
+      <pre><code contenteditable>
+  def print_arg(arg):
+    print arg
+
+  >>> print_arg()
+  Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  TypeError: print_arg() takes exactly 1 argument (0 given)
+  >>> 
+      </code></pre>
+    </section>
+
+     <section>
+      <h2>Arguments (II)</h2>
+      <h4>Keyword arguments</h4>
+      <ul>
+        <li>The caller identifies the arguments by the parameter name</li>
+        <li>Allow to skip arguments or place them out of order</li>
+      </ul>
+      <pre><code contenteditable>
+        #!/usr/bin/python
+
+        # Function definition is here
+        def printinfo( name, age ):
+           "This prints a passed info into this function"
+           print "Name: ", name
+           print "Age ", age
+           return
+
+        # Now you can call printinfo function
+        printinfo( age=50, name="miki" )
+      </code></pre>
+    </section>
+
+     <section>
+      <h2> Arguments (III) </h2>
+      <h4>Default Argument Values</h4>
+      <ul>
+        <li>Specify a default value for one or more arguments</li>
+        <li>The function can be called with fewer arguments than it is defined to allow.</li>
+      </ul>
+      <pre><code contenteditable>
+        #!/usr/bin/python
+
+        # Function definition is here
+        def printinfo( name, age = 35 ):
+           "This prints a passed info into this function"
+           print "Name: ", name
+           print "Age ", age
+           return
+
+        # Now you can call printinfo function
+        printinfo( age=50, name="miki" )
+        printinfo( name="miki" )
+      </code></pre>
+    </section>
+
+     <section>
+      <h2>Arguments (IV)</h2>
+      <h4>Arbitrary Argument Lists</h4>
+      <ul>
+        <li>These arguments will be wrapped up in a tuple</li>
+      </ul>
+      <pre><code contenteditable>
+        #!/usr/bin/python
+
+        # Function definition is here
+        def printinfo( arg1, *vartuple ):
+           "This prints a variable passed arguments"
+           print "Output is: "
+           print arg1
+           for var in vartuple:
+              print var
+           return;
+
+        # Now you can call printinfo function
+        printinfo( 10 );
+        printinfo( 70, 60, 50 );
+      </code></pre>
+    </section>
+
+    <section class="separata">
+      <hgroup>
+        <h2>Modules and classes</h2>
+      </hgroup>
+      <figure>
+        <img src="./img/modules.jpg">
+        <figcaption>
+          <span>Original by ishabluebell: </span>
+          <a href="http://www.flickr.com/photos/ishabluebell/5541426166/"
+         target="_blank">http://bit.ly/WyWkEF</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Module</h2>
+      <h4>Defining</h4>
+      <ul>
+        <li>File with Python code to organize the code</li>
+        <li>File name = module_name.py</li>
+      </ul>
+      <pre><code contenteditable>
+        # Module hello in hello.py file
+        def print_func( par ):
+          print "Hello : ", par
+          return
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Module</h2>
+      <h4>Using</h4>
+      <ul>
+        <li>Can import other modules</li>
+        <li>Customary but not required to place all import statements at the beginning of a module</li>
+      </ul>
+      <pre><code contenteditable>
+        # Using the module hello
+        #!/usr/bin/python
+
+        import hello
+
+        hello.print_func("Zara")
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Class</h2>
+      <h4>Defining</h4>
+      <pre><code contenteditable>
+  class Employee:
+    'Common base class for all employees'
+    empCount = 0
+
+    def __init__(self, name, salary):
+      self.name = name
+      self.salary = salary
+      Employee.empCount += 1
+   
+    def displayCount(self):
+      print "Total Employee %d" % Employee.empCount
+
+    def displayEmployee(self):
+      print "Name : ", self.name,  ", Salary: ", self.salary
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Creating instance objects</h2>
+       <p>Call the class using class name and pass in whatever arguments its __init__ method accepts</p>
+      <pre><code contenteditable>
+  # This would create first object of Employee class
+  emp1 = Employee("Zara", 2000)
+  # This would create second object of Employee class
+  emp2 = Employee("Manni", 5000)</h2>
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Accessing attributes and methods</h2>
+      <pre><code contenteditable>
+  emp1.displayEmployee()
+  emp2.displayEmployee()
+  print "Total Employee %d" % Employee.empCount
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Inheritance (I)</h2>
+      <ul>
+        <li>You can create a class by deriving it from a preexisting class</li>
+        <li>The child class inherits the attributes of its parent class</li>
+      </ul>
+      <pre><code contenteditable>
+  #!/usr/bin/python
+
+  class Parent:        # define parent class
+    def __init__(self):
+      print "Calling parent constructor"
+
+    def parentMethod(self):
+      print 'Calling parent method'
+
+      </code></pre>
+    </section>
+
+  <section>
+      <h2>Inheritance (II)</h2>
+      <pre><code contenteditable>
+class Child(Parent): # define child class
+  def __init__(self):
+    print "Calling child constructor"
+
+  def childMethod(self):
+    print 'Calling child method'
+
+c = Child()          # instance of child
+c.childMethod()      # child calls its method
+c.parentMethod()     # calls parent's method
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Multiple Inheritance (I)</h2>
+      <ul>Old-style classes
+        <li>Until 2.2 Version</li>
+        <li>Rule depth-first, left-to-right</li>
+        <li>If an attribute is not found in C, it is searched in A, then (recursively) in the base classes of A, and only if it is not found there, it is searched in B, and so on.</li>
+      </ul>
+      <pre><code contenteditable>
+  class A:        # define your class A
+  .....
+
+  class B:         # define your class B
+  .....
+
+  class C(A, B):   # subclass of A and B
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Multiple Inheritance (II)</h2>
+      <ul>New-style classes
+        <li>From 2.3 Version</li>
+        <li>The method resolution order changes dynamically</li>
+        <li>http://www.python.org/download/releases/2.3/mro/</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Overriding Methods</h2>      
+      <pre><code contenteditable>
+  class Parent:     # define parent class
+     def myMethod(self):
+        print 'Calling parent method'
+
+  class Child(Parent): # define child class
+     def myMethod(self):
+        print 'Calling child method'
+
+  c = Child()    # instance of child
+  c.myMethod()   # child calls overridden method
+  
+  #result
+  Calling child method
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Overloading Operators</h2>      
+      <pre><code contenteditable>  class Vector:
+     def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+     def __str__(self):
+        return 'Vector (%d, %d)' % (self.a, self.b)
+     
+     def __add__(self,other):
+        return Vector(self.a + other.a, self.b + other.b)
+
+  v1 = Vector(2,10)
+  v2 = Vector(5,-2)
+  print v1 + v2
+  #result
+  Vector(7,8)</code></pre>
+    </section>
+
+    <section>
+      <h2>Private methods and attributes (I)</h2>
+      <ul>
+        <li>Privateness is a matter of convention, not force</li>
+        <li>http://stackoverflow.com/questions/70528/why-are-pythons-private-methods-not-actually-private</li>
+      <pre><code contenteditable>
+  #!/usr/bin/python
+
+  class JustCounter:
+    __secretCount = 0
+  
+    def count(self):
+      self.__secretCount += 1
+      print self.__secretCount
+
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Private methods and attributes (II)</h2>
+      <pre><code contenteditable>
+    counter = JustCounter()
+    counter.count()
+    counter.count()
+    print counter.__secretCount
+
+    #Result
+    1
+    2
+  Traceback (most recent call last):
+  File "test.py", line 12, in <module>
+    print counter.__secretCount
+  AttributeError: JustCounter instance has no attribute '__secretCount'
+      </code></pre>
+      <pre><code contenteditable>
+      print counter._JustCounter__secretCount
+
+      # Result
+    2
+      </code></pre>
+    </section>
+
+
+    <section class="separata">
+      <hgroup>
+        <h2>Tools</h2>
+      </hgroup>
+      <figure>
+        <img src="./img/tools.jpg">
+        <figcaption>
+          <span>Original by JanneM: </span>
+          <a href="http://www.flickr.com/photos/jannem/3312116875/">http://bit.ly/Z9fdup</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Running Python</h2>
+      <p>Interactive Interpreter</p>
+      <pre><code contenteditable>
+        $python             # Unix/Linux
+        python%             # Unix/Linux
+        C:>python           # Windows/DOS
+      </code></pre>
+      <p>Script from the Command-line</p>
+      <pre><code contenteditable>
+    $python  script.py          # Unix/Linux
+    python% script.py           # Unix/Linux
+    C:>python script.py         # Windows/DOS
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Executable Python Scripts(I)</h2> 
+      <ul>Unix Systems
+        <li>Python scripts can be made directly executable</li>
+        <li>Putting the follow line at the beginning of the script</li>
+          <pre><code contenteditable>
+          #! /usr/bin/env python
+          </code></pre>
+        <li>Giving the file an executable mode</li>
+        <li>
+          <pre><code contenteditable>
+          $ chmod +x myscript.py
+          </code></pre>
+      </li>
+      </ul>
+        
+      </li>
+    </section>
+
+    <section>
+      <h2>Executable Python Scripts (II)</h2> 
+      <ul>Windows systems
+        <li>The Python installer automatically associates .py files with python.exe</li>
+        <li>A double-click on a Python file will run it as a script</li>
+      </li>
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <ul>
+        <li>Official Web Site: http://www.python.org/</li>
+        <li>Tutorials</li>
+        http://learnpythonthehardway.org/book/
+        http://en.wikibooks.org/wiki/A_Beginner
+        <li>Koans: Koans: https://github.com/gregmalcolm/python_koans</li>
+        <li>Style guide: http://www.python.org/dev/peps/pep-0008/</li>
+        <li>Good courses using python: https://www.udacity.com/</li>
+      </ul>
+    </section>
+
+    <section class="separata">
+      <hgroup>
+        <h1>The End</h1>
+        <h2>Some questions?</h2>
+      </hgroup>
+      <figure>
+        <img src="./img/question.jpg">
+        <figcaption>
+          <span>Original by Scott McLeod: </span>
+          <a href="http://www.flickr.com/photos/mcleod/7150176087/"
+         target="_blank">http://bit.ly/WRqGV3</a>
+        </figcaption>
+      </figure>
+    </section>
+  </div>
+</div>
+
+<script src="reveal.js-2.1/lib/js/head.min.js"></script>
+<script src="reveal.js-2.1/js/reveal.min.js"></script>
+
+<script>
+
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls:true,
+    progress:true,
+    history:true,
+
+    theme:Reveal.getQueryHash().theme, // available themes are in /css/theme
+    transition:Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+    // Optional libraries used to extend on reveal.js
+    dependencies:[
+      { src:'reveal.js-2.1/lib/js/classList.js', condition:function () {
+        return !document.body.classList;
+      } },
+      { src:'reveal.js-2.1/plugin/markdown/showdown.js', condition:function () {
+        return !!document.querySelector('[data-markdown]');
+      } },
+      { src:'reveal.js-2.1/plugin/markdown/markdown.js', condition:function () {
+        return !!document.querySelector('[data-markdown]');
+      } },
+      { src:'reveal.js-2.1/plugin/highlight/highlight.js', async:true, callback:function () {
+        hljs.initHighlightingOnLoad();
+      } },
+      { src:'reveal.js-2.1/plugin/zoom-js/zoom.js', async:true, condition:function () {
+        return !!document.body.classList;
+      } },
+      { src:'reveal.js-2.1/plugin/notes/notes.js', async:true, condition:function () {
+        return !!document.body.classList;
+      } }
+    ]
+  });
+
+</script>
+
+</body>
+</html>

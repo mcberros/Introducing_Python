@@ -1,0 +1,65 @@
+30 minutos aprox 30 o 40 slides
+Cada * es aprox una (o 2) presentación
+
+# Introducción a Python
+
+## Sintaxis basica
+* Comentarios
+* Indentación (buenas prácticas: http://www.python.org/dev/peps/pep-0008/)
+
+## Built-in Types & Operators
+* booleanos
+* numericos
+* cadenas
+* arrays
+* listas y rangos (http://docs.python.org/release/1.5.1p1/tut/range.html)
+* diccionarios
+* tuplas (http://docs.python.org/release/1.5.1p1/tut/tuples.html)
+* Precedencia. http://docs.python.org/2/reference/expressions.html#operator-precedence
+
+
+## Asignaciones
+* simple
+* deestructuring (http://robert-lujo.com/post/40871820711/python-destructuring)
+* Imprimir
+
+## Elementos de control
+  * If
+  * While
+  * For
+  * List Comprehension (seccion 5.1.4 http://docs.python.org/2/tutorial/datastructures.html)
+  * Dictionary Comprehension (http://www.python.org/dev/peps/pep-0274/)
+
+## Funciones
+* splat
+
+## Módulos y clases
+  * Módulos
+    ¿Qué es y para qué sirve?
+    Sintaxis
+    ¿Cómo se importa?: Fichero con módulo
+    ¿Duda: Hay parte privada y parte pública?
+
+  * Clases
+    ¿Qué es y para qué sirve?
+    None
+    Sintaxis
+    Constructor
+    self
+    ¿Cómo se importa?: Fichero con módulo
+    ¿Duda:Hay parte privada y parte pública?
+    Objetos. Clase padre, super
+
+## Tools
+* Intérprete
+* Vim y Sublime (Configuración)
+* Tipos de ficheros y como ejecutarlos
+
+## Recursos (Koans, Tutoriales)
+* Official Web site: http://www.python.org/
+* Tutoriales: 
+http://learnpythonthehardway.org/book/
+http://en.wikibooks.org/wiki/A_Beginner's_Python_Tutorial
+* Koans: https://github.com/gregmalcolm/python_koans
+* Style guide: http://www.python.org/dev/peps/pep-0008/
+* https://www.udacity.com/

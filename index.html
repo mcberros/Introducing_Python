@@ -257,6 +257,7 @@
     <section>
       <h2>This talk</h2>
       <ol>
+        <li>Environment</li>
         <li>Basic Syntax</li>
         <li>Built-in Types and Operators</li>
         <li>Assignment</li>
@@ -270,6 +271,62 @@
 
 
     <!-- Para separar las secciones -->
+
+      <section class="separata">
+      <hgroup>
+        <h2>Environment</h2>
+      </hgroup>
+      <figure>
+        <img src="./img/python.jpg">
+        <figcaption>
+          <span>Original by Sebastian Niedlich (Grabthar): </span>
+          <a href="http://www.flickr.com/photos/42311564@N00/2355590274/">http://bit.ly/YDQxdA</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Running Python</h2>
+      <p>Interactive Interpreter</p>
+      <pre><code contenteditable>
+        $python             # Unix/Linux
+        python%             # Unix/Linux
+        C:>python           # Windows/DOS
+      </code></pre>
+      <p>Script from the Command-line</p>
+      <pre><code contenteditable>
+    $python  script.py          # Unix/Linux
+    python% script.py           # Unix/Linux
+    C:>python script.py         # Windows/DOS
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Executable Python Scripts(I)</h2> 
+      <ul>Unix Systems
+        <li>Python scripts can be made directly executable</li>
+        <li>Putting the follow line at the beginning of the script</li>
+          <pre><code contenteditable>
+          #! /usr/bin/env python
+          </code></pre>
+        <li>Giving the file an executable mode</li>
+        <li>
+          <pre><code contenteditable>
+          $ chmod +x myscript.py
+          </code></pre>
+      </li>
+      </ul>
+        
+      </li>
+    </section>
+
+    <section>
+      <h2>Executable Python Scripts (II)</h2> 
+      <ul>Windows systems
+        <li>The Python installer automatically associates .py files with python.exe</li>
+        <li>A double-click on a Python file will run it as a script</li>
+      </li>
+    </section>
 
     <section class="separata">
       <hgroup>
@@ -1474,7 +1531,6 @@ c.parentMethod()     # calls parent's method
       </code></pre>
     </section>
 
-
     <section class="separata">
       <hgroup>
         <h2>Tools</h2>
@@ -1486,49 +1542,6 @@ c.parentMethod()     # calls parent's method
           <a href="http://www.flickr.com/photos/jannem/3312116875/">http://bit.ly/Z9fdup</a>
         </figcaption>
       </figure>
-    </section>
-
-    <section>
-      <h2>Running Python</h2>
-      <p>Interactive Interpreter</p>
-      <pre><code contenteditable>
-        $python             # Unix/Linux
-        python%             # Unix/Linux
-        C:>python           # Windows/DOS
-      </code></pre>
-      <p>Script from the Command-line</p>
-      <pre><code contenteditable>
-    $python  script.py          # Unix/Linux
-    python% script.py           # Unix/Linux
-    C:>python script.py         # Windows/DOS
-      </code></pre>
-    </section>
-
-    <section>
-      <h2>Executable Python Scripts(I)</h2> 
-      <ul>Unix Systems
-        <li>Python scripts can be made directly executable</li>
-        <li>Putting the follow line at the beginning of the script</li>
-          <pre><code contenteditable>
-          #! /usr/bin/env python
-          </code></pre>
-        <li>Giving the file an executable mode</li>
-        <li>
-          <pre><code contenteditable>
-          $ chmod +x myscript.py
-          </code></pre>
-      </li>
-      </ul>
-        
-      </li>
-    </section>
-
-    <section>
-      <h2>Executable Python Scripts (II)</h2> 
-      <ul>Windows systems
-        <li>The Python installer automatically associates .py files with python.exe</li>
-        <li>A double-click on a Python file will run it as a script</li>
-      </li>
     </section>
 
     <section>
